@@ -1,0 +1,54 @@
+Manifest-Version: 1.0
+Built-By: kai
+Build-Jdk: 1.7.0_67
+Class-Path: jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-2.jar jb
+ oss-logging-3.1.2.GA-redhat-1.jar jgroups-3.2.7.Final-redhat-1.jar do
+ m4j-1.6.1-redhat-5.jar hibernate-jpa-2.0-api-1.0.1.Final-redhat-2.jar
+  drools-persistence-jpa-6.0.0-redhat-9.jar jbpm-audit-6.0.0-redhat-9.
+ jar jbpm-flow-6.0.0-redhat-9.jar joda-time-1.6.2-redhat-4.jar jbpm-hu
+ man-task-core-6.0.0-redhat-9.jar cdi-api-1.0-SP4-redhat-2.jar jboss-i
+ nterceptors-api_1.1_spec-1.0.1.Final-redhat-2.jar javax.inject-1-redh
+ at-3.jar activation-1.1.1-redhat-2.jar jboss-annotations-api_1.1_spec
+ -1.0.1.Final-redhat-2.jar solder-api-3.2.1.Final.jar solder-logging-3
+ .2.1.Final.jar commons-codec-1.4-redhat-2.jar jbpm-shared-services-6.
+ 0.0-redhat-9.jar weld-core-1.1.13.Final-redhat-1.jar commons-io-2.1-r
+ edhat-2.jar aopalliance-1.0.jar jboss-servlet-api_3.0_spec-1.0.2.Fina
+ l-redhat-1.jar httpclient-4.2.1-redhat-1.jar httpcore-4.2.1-redhat-1.
+ jar jcl-over-slf4j-1.7.2-redhat-1.jar javassist-3.15.0-GA-redhat-2.ja
+ r jms-1.1.jar netty-3.5.11.Final.jar resteasy-jaxrs-2.3.6.Final-redha
+ t-1.jar scannotation-1.0.2-redhat-2.jar jboss-jaxrs-api_1.1_spec-1.0.
+ 1.Final-redhat-2.jar jcip-annotations-1.0-redhat-3.jar resteasy-jaxb-
+ provider-2.3.6.Final-redhat-1.jar jackson-core-asl-1.9.9-redhat-2.jar
+  jackson-mapper-asl-1.9.9-redhat-2.jar hornetq-journal-2.3.5.Final-re
+ dhat-2.jar jboss-logmanager-1.4.3.Final-redhat-1.jar hornetq-commons-
+ 2.3.5.Final-redhat-2.jar mail-1.4.5-redhat-1.jar mvel2-2.1.7.Final-re
+ dhat-4.jar slf4j-api-1.7.2-redhat-1.jar log4j-1.2.16-redhat-2.jar kie
+ -api-6.0.3-redhat-4.jar kie-internal-6.0.3-redhat-4.jar drools-core-6
+ .0.3-redhat-4.jar hornetq-jms-client-2.3.5.Final-redhat-2.jar hornetq
+ -core-client-2.3.5.Final-redhat-2.jar jboss-jms-api_1.1_spec-1.0.0.Fi
+ nal.jar commons-logging-1.1.1.jar resteasy-jackson-provider-2.3.6.Fin
+ al-redhat-1.jar kie-ci-6.0.3-redhat-4.jar maven-core-3.0.5.jar maven-
+ settings-3.0.5.jar maven-settings-builder-3.0.5.jar maven-repository-
+ metadata-3.0.5.jar maven-artifact-3.0.5.jar maven-plugin-api-3.0.5.ja
+ r maven-model-builder-3.0.5.jar maven-aether-provider-3.0.5.jar sisu-
+ inject-plexus-2.3.0.jar sisu-inject-bean-2.3.0.jar sisu-guice-3.1.0-n
+ o_aop.jar sisu-guava-0.9.9.jar guice-bean-containers-2.3.0.jar guice-
+ bean-inject-2.3.0.jar guice-plexus-shim-2.3.0.jar sisu-guice-3.1.0.ja
+ r guice-bean-reflect-2.3.0.jar guice-bean-locators-2.3.0.jar guice-be
+ an-binders-2.3.0.jar guice-bean-scanners-2.3.0.jar guice-bean-convert
+ ers-2.3.0.jar guice-plexus-metadata-2.3.0.jar guice-plexus-converters
+ -2.3.0.jar guice-plexus-locators-2.3.0.jar guice-plexus-binders-2.3.0
+ .jar guice-plexus-scanners-2.3.0.jar guice-plexus-lifecycles-2.3.0.ja
+ r plexus-interpolation-1.14.jar plexus-utils-2.0.6.jar plexus-classwo
+ rlds-2.4.jar plexus-component-annotations-1.5.5.jar plexus-sec-dispat
+ cher-1.3.jar plexus-cipher-1.4.jar maven-model-3.0.5.jar maven-compat
+ -3.0.5.jar wagon-provider-api-2.4.jar aether-api-1.13.1.jar aether-ut
+ il-1.13.1.jar aether-impl-1.13.1.jar aether-spi-1.13.1.jar aether-con
+ nector-wagon-1.13.1.jar aether-connector-file-1.13.1.jar ant-1.8.3.ja
+ r ant-launcher-1.8.3.jar wagon-http-2.0.jar wagon-http-shared4-2.0.ja
+ r jsoup-1.6.1.jar jackson-jaxrs-1.9.9-redhat-2.jar jackson-xc-1.9.9-r
+ edhat-2.jar antlr-runtime-3.5.jar ecj-3.7.2-redhat-1.jar xstream-1.4.
+ 7.jar xmlpull-1.1.3.1.jar xpp3_min-1.1.4c.jar protobuf-java-2.5.0.jar
+  jaxb-impl-2.2.6.jar kie-services-jaxb-6.0.3-redhat-4.jar
+Created-By: Maven Integration for Eclipse
+

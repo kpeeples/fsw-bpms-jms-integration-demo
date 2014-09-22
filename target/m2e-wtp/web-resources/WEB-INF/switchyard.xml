@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><sy:switchyard xmlns:sy="urn:switchyard-config:switchyard:1.0" xmlns:bean="urn:switchyard-component-bean:config:1.0" xmlns:bpm="urn:switchyard-component-bpm:config:1.0" xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:soap="urn:switchyard-component-soap:config:1.0" xmlns:transform="urn:switchyard-config:transform:1.0" name="BPMIS" targetNamespace="urn:com.redhat.fsw:BPMIS:1.0">
+    <sca:composite name="BPMIS" targetNamespace="urn:com.redhat.fsw:BPMIS:1.0">
+        <sca:service name="ProcessService" promote="ProcessServiceBean/ProcessService">
+            <sca:interface.wsdl interface="ProcessService.wsdl#wsdl.porttype(ProcessServicePort)"/>
+            <soap:binding.soap name="ProcessService">
+                <soap:messageComposer unwrapped="true"/>
+                <soap:wsdl>ProcessService.wsdl</soap:wsdl>
+                <soap:wsdlPort>ProcessServicePort</soap:wsdlPort>
+                <soap:contextPath>processAPI</soap:contextPath>
+            </soap:binding.soap>
+        </sca:service>
+        <sca:component name="ProcessServiceBean">
+            <bean:implementation.bean class="com.redhat.fsw.BPMIS.ProcessServiceBean"/>
+            <sca:service name="ProcessService">
+                <sca:interface.java interface="com.redhat.fsw.BPMIS.ProcessService"/>
+            </sca:service>
+        </sca:component>
+    </sca:composite>
+    <sy:transforms>
+        <transform.java xmlns="urn:switchyard-config:transform:1.0" class="com.redhat.fsw.BPMIS.transformator.OutTransformer" from="java:java.lang.String" to="{http://redhat.com/BPMIS}getTasksResponse"/>
+        <transform.java xmlns="urn:switchyard-config:transform:1.0" class="com.redhat.fsw.BPMIS.transformator.OutTransformer" from="java:java.lang.String" to="{http://redhat.com/BPMIS}startProcessResponse"/>
+        <transform:transform.jaxb contextPath="com.redhat.fsw.BPMIS.process:com.redhat.fsw.BPMIS.user" from="{http://redhat.com/BPMIS}getTasks" to="java:com.redhat.fsw.BPMIS.process.ProcessContext"/>
+        <transform:transform.jaxb contextPath="com.redhat.fsw.BPMIS.process:com.redhat.fsw.BPMIS.user" from="{http://redhat.com/BPMIS}startProcess" to="java:com.redhat.fsw.BPMIS.process.ProcessContext"/>
+    </sy:transforms>
+</sy:switchyard>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ProcessService" targetNamespace="http://redhat.com/BPMIS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://redhat.com/BPMIS" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://redhat.com/BPMIS" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://redhat.com/BPMIS">
+  <xs:complexType name="processContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correlationId" type="xs:string"/>
+      <xs:element minOccurs="0" name="deploymentId" type="xs:string"/>
+      <xs:element minOccurs="0" name="processId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="processInstanceIds" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="user" type="tns:bpmUser"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="bpmUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="startProcess" type="tns:startProcess"/>
+  <xs:complexType name="startProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="processContext" type="tns:processContext"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="startProcessResponse" type="tns:startProcessResponse"/>
+  <xs:complexType name="startProcessResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="string" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getTasks" type="tns:getTasks"/>
+  <xs:complexType name="getTasks">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="processContext" type="tns:processContext"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getTasksResponse" type="tns:getTasksResponse"/>
+  <xs:complexType name="getTasksResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="string" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getTasksResponse">
+    <wsdl:part name="parameters" element="tns:getTasksResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="startProcess">
+    <wsdl:part name="parameters" element="tns:startProcess">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="startProcessResponse">
+    <wsdl:part name="parameters" element="tns:startProcessResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTasks">
+    <wsdl:part name="parameters" element="tns:getTasks">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ProcessServicePort">
+    <wsdl:operation name="startProcess">
+      <wsdl:input name="startProcess" message="tns:startProcess">
+    </wsdl:input>
+      <wsdl:output name="startProcessResponse" message="tns:startProcessResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTasks">
+      <wsdl:input name="getTasks" message="tns:getTasks">
+    </wsdl:input>
+      <wsdl:output name="getTasksResponse" message="tns:getTasksResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProcessServiceSoapBinding" type="tns:ProcessServicePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="startProcess">
+      <soap:operation soapAction="startProcess" style="document"/>
+      <wsdl:input name="startProcess">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startProcessResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTasks">
+      <soap:operation soapAction="getTasks" style="document"/>
+      <wsdl:input name="getTasks">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTasksResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProcessService">
+    <wsdl:port name="ProcessServicePort" binding="tns:ProcessServiceSoapBinding">
+      <soap:address location="http://localhost:8080/BPMIS/ProcessService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
