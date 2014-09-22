@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BPM Integration Suite Demo
 
 ## Subject
@@ -49,3 +50,7 @@ classloading errors and classloading isolation problems.
 + Build the REST implementation
 + Build process monitoring frontend for maintanance users
   + Integrate as JON-Plugin
+=======
+fsw-bpms-jms-integration-demo
+=============================
+>>>>>>> 174576ebf17a95df5f60c37f7c13dc0c295b9c75
